@@ -103,13 +103,17 @@ public TaskModel(UUID id, String description, String title, LocalDateTime startA
         return startAt;
     }
     
-    public void setTitle(String title) {
+    public void setTitle(String title) throws Exception {
+        if(title.length()> 50){
+            throw new Exception("O campo title deve conter no máximo 50 caracteres");
+        }
         this.title = title;
     }
 
     public String getTitle() {
         return title;
     }
+
 
     
 
